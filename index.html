@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Charan Madhavapeddi — Senior AI Solutions Architect II, DigitalOcean</title>
+<meta name="description" content="Sri Charan Madhavapeddi, Senior AI Solutions Architect II at DigitalOcean — demos, technical writing, and work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,460;0,9..144,560;1,9..144,460&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC;
+    --ink:#10202C;
+    --ink-soft:#4C5D66;
+    --ocean:#0E2238;
+    --teal:#1F8A82;
+    --teal-deep:#146158;
+    --gold:#C89B3C;
+    --line: rgba(16,32,44,0.14);
+    --card: #ffffff;
+    --radius: 3px;
+    --measure: 62ch;
+    color-scheme: light;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:"Fraunces","IBM Plex Sans",serif;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:inherit; }
+
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(246,243,236,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:18px;
+    padding-bottom:18px;
+  }
+  .brand{
+    font-family:"Fraunces", serif;
+    font-size:1.05rem;
+    font-weight:560;
+  }
+  .nav{
+    display:flex;
+    gap:28px;
+    font-size:0.92rem;
+  }
+  .nav a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav a:hover, .nav a:focus-visible{
+    color:var(--teal-deep);
+    border-color:var(--teal-deep);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:84px 0 64px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    color:var(--teal-deep);
+    font-size:0.92rem;
+    font-weight:500;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(2.5rem, 4.4vw, 3.6rem);
+    font-weight:460;
+    line-height:1.06;
+  }
+  .role{
+    margin-top:14px;
+    font-size:1.2rem;
+    color:var(--teal-deep);
+    font-weight:500;
+  }
+  .about{
+    margin-top:26px;
+    max-width:var(--measure);
+    color:var(--ink-soft);
+    font-size:1.04rem;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-size:0.95rem;
+    font-weight:500;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn-primary{
+    background:var(--ocean);
+    color:var(--paper);
+  }
+  .btn-primary:hover{ background:var(--teal-deep); }
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{ border-color: var(--teal-deep); color:var(--teal-deep); }
+
+  .portrait-frame{
+    position:relative;
+    justify-self:center;
+  }
+  .portrait-frame .ring{
+    position:absolute;
+    inset:-14px;
+    border:1px solid var(--teal);
+    border-radius:8px;
+    transform: rotate(-3deg);
+  }
+  .portrait-frame img{
+    position:relative;
+    width:280px;
+    height:360px;
+    object-fit:cover;
+    object-position: top center;
+    border-radius:6px;
+    box-shadow: 0 18px 40px rgba(14,34,56,0.18);
+  }
+
+  .hero-wave{
+    position:absolute;
+    left:0; right:0; bottom:-1px;
+    height:64px;
+    color:var(--ocean);
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:74px 0; }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:44px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;
+  }
+  .section-head h2{
+    font-size:1.9rem;
+    font-weight:500;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    max-width:36ch;
+    margin:0;
+    font-size:0.98rem;
+  }
+
+  /* ---------- Demos ---------- */
+  .demos{ background:var(--ocean); color:var(--paper); }
+  .demos .section-head{ border-color: rgba(246,243,236,0.18); }
+  .demos .section-head h2{ color:var(--paper); }
+  .demos .section-head p{ color: rgba(246,243,236,0.66); }
+
+  .demo-row{
+    display:grid;
+    grid-template-columns: 1.1fr 2fr auto;
+    gap:28px;
+    align-items:center;
+    padding:28px 0;
+    border-bottom:1px solid rgba(246,243,236,0.14);
+  }
+  .demo-row:last-child{ border-bottom:none; }
+  .demo-name{
+    font-family:"Fraunces", serif;
+    font-size:1.35rem;
+    font-weight:460;
+  }
+  .demo-desc{
+    color: rgba(246,243,236,0.72);
+    font-size:0.98rem;
+    max-width:48ch;
+  }
+  .demo-link{
+    justify-self:end;
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--paper);
+    border-bottom:1px solid var(--teal);
+    padding-bottom:3px;
+    white-space:nowrap;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .demo-link:hover, .demo-link:focus-visible{
+    color:var(--teal);
+  }
+
+  /* ---------- Writing ---------- */
+  .writing-card{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap:24px;
+    align-items:center;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 32px;
+  }
+  .writing-card h3{
+    font-size:1.3rem;
+    font-weight:500;
+    margin-bottom:8px;
+  }
+  .writing-card p{
+    color:var(--ink-soft);
+    margin:0;
+    max-width:60ch;
+    font-size:0.98rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0 56px;
+    border-top:1px solid var(--line);
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  @media (max-width:760px){
+    .wrap{ padding:0 20px; }
+    .hero .wrap{ grid-template-columns:1fr; }
+    .portrait-frame{ order:-1; justify-self:start; }
+    .portrait-frame img{ width:180px; height:230px; }
+    .nav{ gap:16px; font-size:0.85rem; }
+    .demo-row{ grid-template-columns:1fr; gap:10px; }
+    .demo-link{ justify-self:start; }
+    .writing-card{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Sri Charan Madhavapeddi</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#demos">Demos</a>
+      <a href="#writing">Writing</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">DigitalOcean</div>
+      <h1>Sri Charan<br>Madhavapeddi</h1>
+      <div class="role">Senior AI Solutions Architect II, DigitalOcean</div>
+      <p class="about">
+        I work at the intersection of infrastructure and applied AI. As a Solutions
+        Architect, my role is to sit alongside customers and internal teams while they
+        design, prototype, and ship AI and machine learning systems &mdash; translating
+        open-weight models, GPU infrastructure, and platform services into working
+        products that hold up in production. That means architecting end-to-end
+        solutions, building reference demos like the ones below, and helping teams
+        reason clearly about the trade-offs between cost, latency, and scale, so the
+        right call gets made early rather than fixed later.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#demos">See the demos</a>
+        <a class="btn btn-ghost" href="#writing">Read the write-up</a>
+      </div>
+    </div>
+    <div class="portrait-frame">
+      <div class="ring" aria-hidden="true"></div>
+      <img src="assets/sricharan.jpg" alt="Portrait of Sri Charan Madhavapeddi">
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0,40 C240,80 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z"></path>
+  </svg>
+</header>
+
+<section class="demos" id="demos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Demos</h2>
+      <p>A few applied AI builds, deployed and running on DigitalOcean App Platform.</p>
+    </div>
+
+    <div class="demo-row">
+      <div class="demo-name">E-Commerce Image Demo</div>
+      <div class="demo-desc">AI-assisted product imagery for e-commerce catalogs, from raw photo to listing-ready shot.</div>
+      <a class="demo-link" href="https://ecommerce-image-demo-awfh9.ondigitalocean.app/" target="_blank" rel="noopener">Open demo</a>
+    </div>
+
+    <div class="demo-row">
+      <div class="demo-name">Octopus App</div>
+      <div class="demo-desc">A multi-pronged AI workflow app, handling several tasks in parallel from one interface.</div>
+      <a class="demo-link" href="https://octopus-app-3-s2blg.ondigitalocean.app/" target="_blank" rel="noopener">Open demo</a>
+    </div>
+
+    <div class="demo-row">
+      <div class="demo-name">Multilingual Translator</div>
+      <div class="demo-desc">Real-time translation across languages, built on DigitalOcean Serverless Inference.</div>
+      <a class="demo-link" href="https://multilingual-translations-url-e382o.ondigitalocean.app/" target="_blank" rel="noopener">Open demo</a>
+    </div>
+
+    <div class="demo-row">
+      <div class="demo-name">King Prawn App</div>
+      <div class="demo-desc">An applied AI build exploring agentic workflows end to end on the platform.</div>
+      <a class="demo-link" href="https://king-prawn-app-4-xuvpa.ondigitalocean.app/" target="_blank" rel="noopener">Open demo</a>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Writing</h2>
+      <p>A technical walkthrough published on the DigitalOcean Community.</p>
+    </div>
+    <div class="writing-card">
+      <div>
+        <h3>Deploy an Ad Exchange Business</h3>
+        <p>A step-by-step tutorial on architecting and deploying an ad exchange platform on DigitalOcean.</p>
+      </div>
+      <a class="btn btn-primary" href="https://www.digitalocean.com/community/tutorials/deploy-ad-exchange-business" target="_blank" rel="noopener">Read the tutorial</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+    <span>&copy; <span id="year"></span> Sri Charan Madhavapeddi</span>
+    <span>Built for DigitalOcean App Platform</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
