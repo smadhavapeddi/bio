@@ -267,6 +267,99 @@
     font-size:0.98rem;
   }
 
+  /* ---------- Speaking & Community ---------- */
+  .speaking{ background:var(--ocean); color:var(--paper); }
+  .speaking .section-head{ border-color: rgba(246,243,236,0.18); }
+  .speaking .section-head h2{ color:var(--paper); }
+  .speaking .section-head p{ color: rgba(246,243,236,0.66); }
+
+  .sub-label{
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--teal);
+    margin-bottom:22px;
+  }
+
+  .stage-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:28px;
+    margin-bottom:64px;
+  }
+  .stage-item figure{
+    margin:0;
+  }
+  .stage-frame{
+    position:relative;
+    border:1px solid rgba(246,243,236,0.2);
+    border-radius:4px;
+    overflow:hidden;
+    aspect-ratio: 4 / 5;
+  }
+  .stage-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+    transition: transform .4s ease;
+  }
+  .stage-item:hover .stage-frame img{ transform: scale(1.04); }
+  .stage-item figcaption{
+    margin-top:14px;
+  }
+  .stage-title{
+    font-family:"Fraunces", serif;
+    font-size:1.05rem;
+    font-weight:460;
+    line-height:1.3;
+  }
+  .stage-meta{
+    margin-top:4px;
+    font-size:0.86rem;
+    color: rgba(246,243,236,0.6);
+  }
+
+  .meetup-row{
+    display:grid;
+    grid-template-columns: 1fr 1.6fr auto;
+    gap:28px;
+    align-items:center;
+    padding:24px 0;
+    border-bottom:1px solid rgba(246,243,236,0.14);
+  }
+  .meetup-row:last-child{ border-bottom:none; }
+  .meetup-when{
+    font-size:0.88rem;
+    color: rgba(246,243,236,0.6);
+  }
+  .meetup-name{
+    font-family:"Fraunces", serif;
+    font-size:1.1rem;
+    font-weight:460;
+    margin-top:4px;
+  }
+  .meetup-desc{
+    color: rgba(246,243,236,0.72);
+    font-size:0.94rem;
+  }
+  .meetup-link{
+    justify-self:end;
+    text-decoration:none;
+    font-size:0.9rem;
+    font-weight:500;
+    color:var(--paper);
+    border-bottom:1px solid var(--teal);
+    padding-bottom:3px;
+    white-space:nowrap;
+  }
+  .meetup-link:hover, .meetup-link:focus-visible{ color:var(--teal); }
+
+  @media (max-width:760px){
+    .stage-grid{ grid-template-columns: repeat(2, 1fr); gap:18px; }
+    .meetup-row{ grid-template-columns:1fr; gap:6px; }
+    .meetup-link{ justify-self:start; margin-top:6px; }
+  }
+
   /* ---------- Footer ---------- */
   footer{
     padding:40px 0 56px;
@@ -300,6 +393,7 @@
       <a href="#about">About</a>
       <a href="#demos">Demos</a>
       <a href="#writing">Writing</a>
+      <a href="#speaking">Speaking</a>
       <a href="https://github.com/smadhavapeddi" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>
@@ -382,6 +476,125 @@
       </div>
       <a class="btn btn-primary" href="https://www.digitalocean.com/community/tutorials/deploy-ad-exchange-business" target="_blank" rel="noopener">Read the tutorial</a>
     </div>
+  </div>
+</section>
+
+<section class="speaking" id="speaking">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Speaking &amp; community</h2>
+      <p>Talks and meetups where I've spoken on cloud and applied AI.</p>
+    </div>
+
+    <div class="sub-label">On stage</div>
+    <div class="stage-grid">
+      <div class="stage-item">
+        <figure>
+          <div class="stage-frame"><img src="assets/bpt-droplets-business.jpeg" alt="Speaker panel for 'DigitalOcean: Droplets to Boost Your Business' webinar"></div>
+          <figcaption>
+            <div class="stage-title">Droplets to Boost Your Business</div>
+            <div class="stage-meta">Blue Power Technology &times; DigitalOcean &middot; Jul 2023</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="stage-item">
+        <figure>
+          <div class="stage-frame"><img src="assets/bpt-cloud-computing.jpeg" alt="Speaker panel for 'Competing Through Cloud Computing' webinar"></div>
+          <figcaption>
+            <div class="stage-title">Competing Through Cloud Computing</div>
+            <div class="stage-meta">Blue Power Technology &times; DigitalOcean &middot; May 2023</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="stage-item">
+        <figure>
+          <div class="stage-frame"><img src="assets/bpt-deploy-webapp.jpeg" alt="Speaker panel for 'Deploy Your Web Application Using DigitalOcean' webinar"></div>
+          <figcaption>
+            <div class="stage-title">Deploy Your Web Application Using DigitalOcean</div>
+            <div class="stage-meta">Blue Power Technology &times; DigitalOcean &middot; Oct 2023</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="stage-item">
+        <figure>
+          <div class="stage-frame"><img src="assets/cloudaz-genai.jpeg" alt="Recap webinar panel for building Generative AI on DigitalOcean for Shopify"></div>
+          <figcaption>
+            <div class="stage-title">Building Generative AI with the GenAI Platform on DigitalOcean for Shopify</div>
+            <div class="stage-meta">CloudAZ &times; DigitalOcean, Vietnam &middot; Mar 2025</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="stage-item">
+        <figure>
+          <div class="stage-frame"><img src="assets/echelon-singapore.jpeg" alt="Announcement graphic for speaking at Echelon Singapore"></div>
+          <figcaption>
+            <div class="stage-title">Echelon Singapore</div>
+            <div class="stage-meta">Suntec Singapore, e27 &middot; Jun 2025</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="sub-label">Community meetups organized</div>
+
+    <div class="meetup-row">
+      <div>
+        <div class="meetup-when">Jul 26, 2025 &middot; Draper Startup House, Hyderabad</div>
+        <div class="meetup-name">DigitalOcean Developers Meetup</div>
+      </div>
+      <div class="meetup-desc">A session on cloud infrastructure and AI innovation, and how developers use infrastructure, platform, and software services to build scalable AI-driven applications.</div>
+      <a class="meetup-link" href="https://www.meetup.com/digitaloceanhyderabad/events/308819041/" target="_blank" rel="noopener">View event</a>
+    </div>
+
+    <div class="meetup-row">
+      <div>
+        <div class="meetup-when">Feb 22, 2025 &middot; Draper Startup House, Hyderabad</div>
+        <div class="meetup-name">DigitalOcean AI Meetup &mdash; Hyderabad</div>
+      </div>
+      <div class="meetup-desc">Exploring the latest advancements in cloud and AI technologies, with talks and hands-on discussions on the future of AI in the cloud.</div>
+      <a class="meetup-link" href="https://www.meetup.com/digitaloceanhyderabad/events/305741866/" target="_blank" rel="noopener">View event</a>
+    </div>
+
+    <div class="meetup-row">
+      <div>
+        <div class="meetup-when">Contentstack, Chennai</div>
+        <div class="meetup-name">Kubernetes Meetup &mdash; Chennai</div>
+      </div>
+      <div class="meetup-desc">Opened with a deep dive into the latest features of DigitalOcean Kubernetes, followed by sessions on Open Policy Agent and Buildpacks from fellow speakers.</div>
+      <a class="meetup-link" href="https://luma.com/9w3yvxrg" target="_blank" rel="noopener">View event</a>
+    </div>
+
+    <div class="meetup-row">
+      <div>
+        <div class="meetup-when">Dec 7, 2024 &middot; Draper Startup House, Hyderabad</div>
+        <div class="meetup-name">DigitalOcean Developers Meetup Hyderabad</div>
+      </div>
+      <div class="meetup-desc">A session on optimized IaaS and PaaS solutions, the role of SaaS in today's AI-driven landscape, and building AI products on DigitalOcean.</div>
+      <a class="meetup-link" href="https://www.meetup.com/digitaloceanhyderabad/events/304673237/" target="_blank" rel="noopener">View event</a>
+    </div>
+
+    <div class="meetup-row">
+      <div>
+        <div class="meetup-when">Sep 28, 2024 &middot; Draper Startup House, Hyderabad</div>
+        <div class="meetup-name">DigitalOcean AI Meetup &mdash; Hyderabad</div>
+      </div>
+      <div class="meetup-desc">A session on DigitalOcean's IaaS and PaaS offerings and the role of SaaS in today's AI landscape, for developers and startups getting started with cloud.</div>
+      <a class="meetup-link" href="https://www.meetup.com/digitaloceanhyderabad/events/303523039/" target="_blank" rel="noopener">View event</a>
+    </div>
+
+    <div class="meetup-row">
+      <div>
+        <div class="meetup-when">T-Hub, Hyderabad</div>
+        <div class="meetup-name">DigitalOcean Hyderabad Meetup 2024</div>
+      </div>
+      <div class="meetup-desc">A full evening of keynotes, hands-on workshops, and networking for developers and cloud professionals in Hyderabad's tech hub.</div>
+      <a class="meetup-link" href="https://luma.com/do-hyd" target="_blank" rel="noopener">View event</a>
+    </div>
+
   </div>
 </section>
 
