@@ -360,6 +360,58 @@
     .meetup-link{ justify-self:start; margin-top:6px; }
   }
 
+  /* ---------- Certifications ---------- */
+  .cert-row{
+    display:grid;
+    grid-template-columns: 1fr 2.1fr auto auto;
+    gap:24px;
+    align-items:center;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .cert-row:last-child{ border-bottom:none; }
+  .cert-when{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+  }
+  .cert-name{
+    font-family:"Fraunces", serif;
+    font-size:1.08rem;
+    font-weight:460;
+  }
+  .cert-issuer{
+    margin-top:2px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  .cert-id{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    opacity:0.75;
+    white-space:nowrap;
+  }
+  .cert-status{
+    justify-self:end;
+    font-size:0.78rem;
+    font-weight:500;
+    padding:5px 12px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .cert-status.active{
+    color:var(--teal-deep);
+    background: rgba(31,138,130,0.12);
+  }
+  .cert-status.expired{
+    color:var(--ink-soft);
+    background: rgba(16,32,44,0.08);
+  }
+
+  @media (max-width:760px){
+    .cert-row{ grid-template-columns:1fr; gap:6px; }
+    .cert-status{ justify-self:start; margin-top:4px; }
+  }
+
   /* ---------- Footer ---------- */
   footer{
     padding:40px 0 56px;
@@ -394,6 +446,7 @@
       <a href="#demos">Demos</a>
       <a href="#writing">Writing</a>
       <a href="#speaking">Speaking</a>
+      <a href="#certifications">Certifications</a>
       <a href="https://github.com/smadhavapeddi" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </div>
@@ -593,6 +646,106 @@
       </div>
       <div class="meetup-desc">A full evening of keynotes, hands-on workshops, and networking for developers and cloud professionals in Hyderabad's tech hub.</div>
       <a class="meetup-link" href="https://luma.com/do-hyd" target="_blank" rel="noopener">View event</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Certifications</h2>
+      <p>Credentials across AI, cloud infrastructure, and Kubernetes.</p>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Aug 2026</div>
+      <div>
+        <div class="cert-name">Claude Certified Architect &mdash; Foundations</div>
+        <div class="cert-issuer">Anthropic</div>
+      </div>
+      <div class="cert-id">Registration ID 543581639</div>
+      <div class="cert-status active">Active</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Jun 2025 &middot; Expires Jun 2027</div>
+      <div>
+        <div class="cert-name">KCNA: Kubernetes and Cloud Native Associate</div>
+        <div class="cert-issuer">The Linux Foundation</div>
+      </div>
+      <div class="cert-id">Credential ID LF-n9mjpsi6e4</div>
+      <div class="cert-status active">Active</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued May 2025 &middot; Expires May 2027</div>
+      <div>
+        <div class="cert-name">CKAD: Certified Kubernetes Application Developer</div>
+        <div class="cert-issuer">The Linux Foundation</div>
+      </div>
+      <div class="cert-id">Credential ID LF-5bre47tcfd</div>
+      <div class="cert-status active">Active</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Mar 2025 &middot; Expires Mar 2028</div>
+      <div>
+        <div class="cert-name">AWS Certified AI Practitioner</div>
+        <div class="cert-issuer">Amazon Web Services (AWS)</div>
+      </div>
+      <div class="cert-id">Credential ID cfe9d6de4fac43e4803cb6926271f20e</div>
+      <div class="cert-status active">Active</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Nov 2024</div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Azure AI Fundamentals</div>
+        <div class="cert-issuer">Microsoft</div>
+      </div>
+      <div class="cert-id">Credential ID 49BB8B65CB5E267E</div>
+      <div class="cert-status active">Active</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Jul 2024 &middot; Expired Jul 2026</div>
+      <div>
+        <div class="cert-name">Certified Kubernetes Administrator (CKA)</div>
+        <div class="cert-issuer">The Linux Foundation</div>
+      </div>
+      <div class="cert-id">Credential ID LF-4ivk82uy7c</div>
+      <div class="cert-status expired">Expired</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Oct 2023</div>
+      <div>
+        <div class="cert-name">Nvidia: Introduction to AI in the Data Center</div>
+        <div class="cert-issuer">Coursera</div>
+      </div>
+      <div class="cert-id"></div>
+      <div class="cert-status active">Active</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Feb 2023 &middot; Expired Feb 2025</div>
+      <div>
+        <div class="cert-name">HashiCorp Certified: Terraform Associate (002)</div>
+        <div class="cert-issuer">HashiCorp</div>
+      </div>
+      <div class="cert-id">Credential ID S118843223</div>
+      <div class="cert-status expired">Expired</div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-when">Issued Mar 2022 &middot; Expired Mar 2025</div>
+      <div>
+        <div class="cert-name">AWS Solutions Architect &mdash; Associate</div>
+        <div class="cert-issuer">Amazon Web Services (AWS)</div>
+      </div>
+      <div class="cert-id">Credential ID 378JT58DGJE1QJ5T</div>
+      <div class="cert-status expired">Expired</div>
     </div>
 
   </div>
